@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Tenor+Sans&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+p {
+  line-height: 1.4;
+  font-size: 25px;
+  font-family: 'Tenor Sans', sans-serif;
+}
+label {
+  display: grid;
+  width: 60px;
+  height: 25px;
+  background-color: #FF441E;
+  cursor: grab;
+}
+.container {
+  display: grid;
+}
+/* Slider */
+.slider {
+  z-index: 3000;
+  left: 40%;
+  transition: transform 1500ms;
+  transform: scale(.4);
+}
+/* Pagination */
+.parallax-pagination,
+.header {
+  margin-bottom: 10px;
+  z-index: 10000;
+}
+.slide-radio1:checked ~ .parallax-pagination .page1 {
+  width: 70px;
+  height: 25px;
+  background: #2737DE;
+}
+.slide-radio2:checked ~ .parallax-pagination .page2 {
+  width: 70px;
+  height: 25px;
+  background: #2737DE;
+}
+.slide-radio3:checked ~ .parallax-pagination .page3 {
+  width: 70px;
+  height: 25px;
+  background: #2737DE;
+}
+/* Slider Slide Effect */
+.slide-radio1:checked ~ .slider {
+  transform: translateX(0%);
+}
+
+#school-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+#social-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+.slide-radio2:checked ~ .slider {
+  transform: translateX(-100%);
+}
+
+#profile-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+#social-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+.slide-radio3:checked ~ .slider {
+  transform: translateX(-200%)
+}
+
+#profile-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+#school-card__img {
+  transform: translateX(-10%);
+  transition: transform 1200ms ease-in;
+}
+
+.slide-1 {
+  left: 0;
+}
+
+.slide-2 {
+  left: 100%;
+}
+
+.slide-3 {
+  left: 200%;
+}
+.profile-screen {
+  z-index: 1;
+}
+
+.profile-screen,
+.school-screen,
+.social-screen {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-color: #dfe6e9;
+}
+
+.title {
+  margin-top: 100px;
+}
+.list-social {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.profile-card,
+.school-card,
+.social-card {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  background: #d1ccc0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+.school-logos {
+  display: inline-block;
+  text-align: center;
+}
+
+#profile-card__img {
+  display: inline-block;
+  width: 400px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 90px;
+}
+#school-card__img {
+  display: inline-block;
+  width: 300px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+
+
+/* Media queries */
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}
