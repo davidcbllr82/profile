@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=archivo-black|archivo-narrow|paralucent|mr-eaves-xl-sans|quiroh&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap');
 
 html {
   box-sizing: border-box;
@@ -8,53 +10,219 @@ html {
 *:after {
   box-sizing: inherit;
 }
-h1 {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 40px;
-  text-transform: uppercase;
+input {
+  position:fixed;opacity:0;
 }
+body {
+  margin: 0;
+  --color-text: #1c1b1b;
+  --color-bg: #efe6e1;
+  --color-link: #b07656;
+  --color-link-hover: #000;
+  --color-deco: #e4dbd6;
+
+  background-color: var(--color-bg);
+  font-family: paralucent, sans-serif;
+  font-family: quiroh, sans-serif;
+  font-family: mr-eaves-xl-sans, sans-serif;
+}
+
+h1 {
+  font-family: 'paralucent', serif;
+  letter-spacing: 12px;
+  font: #2E2E2E;
+}
+h2 {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin-top:50px;
+  letter-spacing: 110px;
+  font-size: 200px;
+  text-decoration: overline;
+
+}
+
 p {
   line-height: 1.4;
   font-size: 25px;
   font-family: 'Tenor Sans', sans-serif;
 }
-label {
-  display: grid;
-  width: 60px;
-  height: 25px;
-  background-color: #FF441E;
-  cursor: grab;
-}
 .container {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 /* Slider */
 .slider {
   z-index: 3000;
-  left: 40%;
-  transition: transform 1500ms;
-  transform: scale(.4);
+  transition: transform 2500ms;
 }
+
 /* Pagination */
-.parallax-pagination,
-.header {
-  margin-bottom: 10px;
+.profile-screen {
+  z-index: 1;
+}
+.profile-screen,
+.school-screen,
+.social-screen {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  background: #EFE6E1;
+  height: 100%;
+}
+.school-screen {
+  z-index: 2;
+  margin-top: 150px;
+}
+.school-card > .batch {
+  z-index: 0;
+  margin-top: 200px;
+}
+.title,
+.title2 {
+  margin-top: 150px;
+  margin-left: 100px;
+}
+.list-social,
+.fab,
+.fa-instagram,
+.fa-github
+ {
+  display: inline-flex;
+  justify-content: center;
+  list-style-type: none;
+  text-decoration: none;
+  margin: 80px;
+  margin-top: 40px;
+  color:#2E2E2E;
+}
+.david {
+  color: #2E2E2E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 400px;
+  margin-top: 400px;
+  margin-left: 600px;
+  opacity: 90%;
+  text-decoration: underline overline;
+}
+
+.batch {
+  font-family: 'Archivo Black', sans-serif;
+
+}
+.profile-card,
+.school-card,
+.social-card {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+.profile-card {
+  background: #E4DCD6;
+}
+.school-card {
+  background-color: #E4DCD6;
+  margin-top: 500px;
+  background
+
+}
+.social-card {
+  background-image: linear-gradient(#cfd9df, #e2ebf0);
+  width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 200px;
+  box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1);
+}
+.school-logos {
+  display: inline-flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+#school-card__img1:hover {
+  filter: invert(0.50);
+}
+#school-card__img2:hover {
+  filter: invert(0.50);
+}
+#profile-card__img {
+  filter: grayscale(100%);
+  display: flex;
+  position: absolute;
+  top: -50px;
+  width: 200px;
+  border-radius: 50%;
+}
+#school-card__img1 {
+  display: inline-flex;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 250px;
+}
+#school-card__img2 {
+  display: inline-flex;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 250px;
+}
+
+
+/* Media queries */
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
+}
+ /* ANIMATION SLIDES */
+ label {
+   position: absolute;
+   display: inline-flex;
+   width: 200px;
+   margin-top: 1100px;
+   margin-right: 400px;
+   height: 5px;
+   background: #434343 ;
+ }
+.parallax-pagination {
   z-index: 10000;
 }
 .slide-radio1:checked ~ .parallax-pagination .page1 {
-  width: 70px;
-  height: 25px;
-  background: #2737DE;
+  width: 400px;
+  height: 10px;
+  background: #e2d1c3;
 }
 .slide-radio2:checked ~ .parallax-pagination .page2 {
-  width: 70px;
-  height: 25px;
-  background: #2737DE;
+  width: 400px;
+  height: 10px;
+  background: #e2d1c3;
 }
 .slide-radio3:checked ~ .parallax-pagination .page3 {
-  width: 70px;
-  height: 25px;
-  background: #2737DE;
+  width: 400px;
+  height: 10px;
+  background: #e2d1c3;
 }
 /* Slider Slide Effect */
 .slide-radio1:checked ~ .slider {
@@ -109,83 +277,4 @@ label {
 
 .slide-3 {
   left: 200%;
-}
-.profile-screen {
-  z-index: 1;
-}
-
-.profile-screen,
-.school-screen,
-.social-screen {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  background-color: #dfe6e9;
-}
-
-.title {
-  margin-top: 100px;
-}
-.list-social {
-  display: inline-block;
-  list-style-type: none;
-}
-
-.profile-card,
-.school-card,
-.social-card {
-  position: absolute;
-  display: inline-block;
-  text-align: center;
-  background: #d1ccc0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 1000px;
-  height: 800px;
-  margin: 0 auto;
-  border-radius: 15px;
-  box-shadow: 0px 70px 40px -50px rgba(0, 0, 0, 0.2), 0px 3px 20px rgba(0, 0, 0, 0.1);
-}
-.school-logos {
-  display: inline-block;
-  text-align: center;
-}
-
-#profile-card__img {
-  display: inline-block;
-  width: 400px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-top: 90px;
-}
-#school-card__img {
-  display: inline-block;
-  width: 300px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-top: 120px;
-}
-
-
-/* Media queries */
-
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
-}
-@media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container {
-    width: 500px;
-  }
-}
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
-  .container {
-    width: 300px;
-  }
 }
